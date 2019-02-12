@@ -1,0 +1,29 @@
+void setup()
+{
+  pinMode(A0, INPUT);
+  pinMode(10, OUTPUT);
+  pinMode(12, OUTPUT);
+  pinMode(A1, INPUT);
+  pinMode(A3, INPUT);
+  pinMode(11, OUTPUT);
+  pinMode(13, OUTPUT);
+}
+
+void loop()
+{
+  while (1 < 2) {
+    while (-40 + 0.488155 * (analogRead(A0) - 20) >= 18 && -40 + 0.488155 * (analogRead(A0) - 20) >= 18) {
+      // cools top
+      digitalWrite(10, HIGH);
+      // cools bottom
+      digitalWrite(12, HIGH);
+    }
+    delay(100); // Wait for 100 millisecond(s)
+    while (-40 + 0.488155 * (analogRead(A1) - 20) >= 18 && -40 + 0.488155 * (analogRead(A3) - 20) >= 18) {
+      // cools left
+      digitalWrite(11, HIGH);
+      // cools right
+      digitalWrite(13, HIGH);
+    }
+  }
+}
